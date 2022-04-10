@@ -1,2 +1,6 @@
-- Java 9 modules
 - New Micronaut
+- default nullable annotation
+- elasticsearch - drop type
+
+- Java 9 modules
+- shedlock.spring it tests (create a module for them)
