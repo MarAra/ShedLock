@@ -38,7 +38,6 @@ import static net.javacrumbs.shedlock.provider.elasticsearch.ElasticsearchLockPr
 import static net.javacrumbs.shedlock.provider.elasticsearch.ElasticsearchLockProvider.LOCK_UNTIL;
 import static net.javacrumbs.shedlock.provider.elasticsearch.ElasticsearchLockProvider.NAME;
 import static net.javacrumbs.shedlock.provider.elasticsearch.ElasticsearchLockProvider.SCHEDLOCK_DEFAULT_INDEX;
-import static net.javacrumbs.shedlock.provider.elasticsearch.ElasticsearchLockProvider.SCHEDLOCK_DEFAULT_TYPE;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.fail;
 
@@ -70,7 +69,7 @@ public class ElasticsearchLockProviderTest extends AbstractLockProviderIntegrati
 
     @Override
     protected void assertUnlocked(String lockName) {
-        GetRequest gr = new GetRequest(SCHEDLOCK_DEFAULT_INDEX, SCHEDLOCK_DEFAULT_TYPE, lockName);
+        GetRequest gr = new GetRequest(SCHEDLOCK_DEFAULT_INDEX, lockName);
         try {
             GetResponse res = highLevelClient.get(gr, RequestOptions.DEFAULT);
             Map<String, Object> m = res.getSourceAsMap();
@@ -85,7 +84,7 @@ public class ElasticsearchLockProviderTest extends AbstractLockProviderIntegrati
 
     @Override
     protected void assertLocked(String lockName) {
-        GetRequest gr = new GetRequest(SCHEDLOCK_DEFAULT_INDEX, SCHEDLOCK_DEFAULT_TYPE, lockName);
+        GetRequest gr = new GetRequest(SCHEDLOCK_DEFAULT_INDEX, lockName);
         try {
             GetResponse res = highLevelClient.get(gr, RequestOptions.DEFAULT);
             Map<String, Object> m = res.getSourceAsMap();
