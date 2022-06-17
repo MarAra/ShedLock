@@ -25,7 +25,6 @@
         <module>shedlock-core</module>
         <module>micronaut/shedlock-micronaut</module>
         <module>micronaut/test/micronaut-jdbc</module>
-        <module>micronaut/test/micronaut-jdbc-new</module>
         <module>micronaut/test/micronaut-jdbc-template</module>
         <module>spring/shedlock-spring</module>
         <module>spring/test/shedlock-springboot-old-test</module>
@@ -74,8 +73,8 @@
         <junit.version>5.8.2</junit.version>
         <test-containers.version>1.17.2</test-containers.version>
         <kotlin.version>1.7.0</kotlin.version>
-        <micronaut.version>2.5.13</micronaut.version>
-        <micronaut-data.version>2.5.0</micronaut-data.version>
+        <micronaut.version>3.5.1</micronaut.version>
+        <micronaut-data.version>3.4.2</micronaut-data.version>
         <logback.version>1.2.11</logback.version>
     </properties>
 
