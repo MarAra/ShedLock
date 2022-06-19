@@ -15,8 +15,6 @@
  */
 package net.javacrumbs.shedlock.core;
 
-import net.javacrumbs.shedlock.support.annotation.NonNull;
-
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Objects;
@@ -52,7 +50,7 @@ public class LockConfiguration {
      * @param lockAtMostFor
      * @param lockAtLeastFor
      */
-    public LockConfiguration(@NonNull Instant createdAt, @NonNull String name, @NonNull Duration lockAtMostFor, @NonNull Duration lockAtLeastFor) {
+    public LockConfiguration(Instant createdAt, String name, Duration lockAtMostFor, Duration lockAtLeastFor) {
         this.createdAt = Objects.requireNonNull(createdAt);
         this.name = Objects.requireNonNull(name);
         this.lockAtMostFor = Objects.requireNonNull(lockAtMostFor);

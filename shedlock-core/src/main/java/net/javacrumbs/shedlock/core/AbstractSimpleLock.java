@@ -15,8 +15,6 @@
  */
 package net.javacrumbs.shedlock.core;
 
-import net.javacrumbs.shedlock.support.annotation.NonNull;
-
 import java.time.Duration;
 import java.util.Optional;
 
@@ -38,7 +36,7 @@ public abstract class AbstractSimpleLock implements SimpleLock {
     protected abstract void doUnlock();
 
     @Override
-    public @NonNull Optional<SimpleLock> extend(@NonNull Duration lockAtMostFor, @NonNull Duration lockAtLeastFor) {
+    public Optional<SimpleLock> extend(Duration lockAtMostFor, Duration lockAtLeastFor) {
         checkValidity();
         Optional<SimpleLock> result = doExtend(new LockConfiguration(ClockProvider.now(), lockConfiguration.getName(), lockAtMostFor, lockAtLeastFor));
         valid = false;
