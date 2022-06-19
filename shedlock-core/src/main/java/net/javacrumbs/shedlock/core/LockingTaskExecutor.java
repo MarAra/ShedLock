@@ -39,11 +39,13 @@ public interface LockingTaskExecutor {
 
     @FunctionalInterface
     interface TaskWithResult<T> {
+        @Nullable
         T call() throws Throwable;
     }
 
     final class TaskResult<T> {
         private final boolean executed;
+        @Nullable
         private final T result;
 
         private TaskResult(boolean executed, @Nullable T result) {
